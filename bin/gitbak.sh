@@ -1,8 +1,7 @@
 #!/bin/bash
-set -ex
-
-exec 1<>/tmp/gitbak.sh.log
-exec 2<>/tmp/gitbak.sh.err
+# set -ex
+# exec 1<>/tmp/gitbak.sh.log
+# exec 2<>/tmp/gitbak.sh.err
 
 FULLNAME=$(readlink -f $1)
 DIRNAME=$(dirname $FULLNAME)
@@ -18,5 +17,5 @@ cd $BAKDIR
 mkdir -p $TARGETDIR
 cp $FULLNAME $TARGETNAME
 git add .
-git commit -m "Vim backup"
+git commit -m "Backup from Vim"
 
