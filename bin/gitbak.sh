@@ -9,12 +9,12 @@ BAKDIR="$2"
 TARGETNAME="$BAKDIR$FULLNAME"
 TARGETDIR="$BAKDIR$DIRNAME"
 
-if [[ -e "$BAKDIR" ]] ;then
+if [[ ! -e "$BAKDIR" ]] ;then
   mkdir -p "$BAKDIR"
   chmod 0700 "$BAKDIR"
 fi
 
-if [[ -e "$BAKDIR/.git" ]] ; then
+if [[ ! -e "$BAKDIR/.git" ]] ; then
   cd "$BAKDIR"
   git init
 fi
