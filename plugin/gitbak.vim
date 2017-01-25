@@ -12,7 +12,7 @@ let s:plugindir = expand('%:p:h:h')
 autocmd BufWritePre * call gitbak#Create()
 
 function! gitbak#Create()
-	let command = s:plugindir . "/bin/gitbak.sh " . expand('%') . " " . g:gitbak_dir
+	let command = s:plugindir . '/bin/gitbak.sh "' . expand('%') . '" "' . g:gitbak_dir . '"'
 	call system(command)
 endfunction
 
