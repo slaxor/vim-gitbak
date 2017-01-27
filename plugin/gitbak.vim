@@ -7,12 +7,12 @@ if (!exists('g:gitbak_dir'))
   let g:gitbak_dir = "$HOME/tmp/vim-gitbak"
 endif
 
-let s:plugindir = expand('%:p:h:h')
+let s:gitbak_plugindir = expand('<sfile>:p:h:h')
 
 autocmd BufWritePre * call gitbak#Create()
 
 function! gitbak#Create()
-	let command = s:plugindir . '/bin/gitbak.sh "' . expand('%') . '" "' . g:gitbak_dir . '"'
+	let command = s:gitbak_plugindir . '/bin/gitbak.sh "' . expand('%') . '" "' . g:gitbak_dir . '"'
 	call system(command)
 endfunction
 
