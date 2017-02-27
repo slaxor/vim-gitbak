@@ -1,4 +1,4 @@
-if (exists('g:loaded_gitbak'))
+if (exists('g:loaded_gitbak') || &writebackup == 0)
   finish
 endif
 let g:loaded_gitbak = 1
